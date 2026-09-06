@@ -274,7 +274,7 @@ Public Class 设置_v6
         Form_v6_设置_界面显示.MCB_全局字体.Items.AddRange(字体列表.ToArray)
         Form_v6_设置_界面显示.MCB_全局字体.Text = 实例对象.字体
 
-        Dim 起始页面顶栏默认标题 = $"<span style=""font-size:15pt"">FFmpegFreeUI {版本号.获取自身版本号} & LakeUI 5 Render Engine BETA</span>"
+        Dim 起始页面顶栏默认标题 = $"<span style=""font-size:15pt"">FFmpegFreeUI {版本号.获取自身版本号} & LakeUI 5th Render Engine</span>"
         Dim 起始页面顶栏副标题 = "<span style=""font-size:10pt; color:CornflowerBlue"">将 ffmpeg、ffplay、ffprobe 加入环境变量或放置于当前目录即可调用</span>"
         If 实例对象.SP_起始页面顶栏标题 <> "" AndAlso SP_UnLock Then
             Form_v6_起始页面.HtmlColorLabel1.Text = 实例对象.SP_起始页面顶栏标题
@@ -418,6 +418,8 @@ Public Class 设置_v6
             Dim image = LoadImageFromFile(自定义图标路径, preserveAnimation:=True)
             设置自有面板图片(Form_v6_起始页面.ModernPanel3, image, _当前自有图标)
             设置主窗体图标(CreateIconFromImage(image))
+        Else
+            设置主窗体图标(CreateIconFromImage(My.Resources.Resource1.AppIcon))
         End If
     End Sub
     Public Shared Sub 加载SP自定义起始页顶栏背景图()
